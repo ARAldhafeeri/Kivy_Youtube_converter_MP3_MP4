@@ -1,0 +1,8 @@
+python -m PyInstaller -n YTDownloader --debug all --onefile --hidden-import win32timezone -i D:\Git_respo\Backup\Backup_Respo\Python\Kivy\Youtube_to_mp3\Youtube_converter\Captures\YtDownloader.ico --windowed D:\Git_respo\Backup\Backup_Respo\Python\Kivy\Youtube_to_mp3\Youtube_converter\backend.py 
+
+
+
+
+
+
+python -m PyInstaller YTDownloader.spec 

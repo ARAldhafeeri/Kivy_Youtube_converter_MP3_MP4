@@ -1,0 +1,395 @@
+#:kivy 1.0
+
+<Manager>:
+    id: screen_manager
+
+    downloader: downloader
+
+    guide: guide
+
+    gallery: gallery
+
+    myvideoplayer: myvideoplayer
+
+
+
+    Downloader:
+        id: downloader
+        name: 'downloader'
+        manager: screen_manager
+
+    Guide:
+        id: guide
+        name: 'guide'
+        manger: screen_manager
+
+    Gallery:
+        id: gallery
+        name: 'gallery'
+        manager: screen_manager
+
+    MyVideoPlayer:
+        id: myvideoplayer
+        name: 'myvideoplayer'
+        manager: screen_manager
+
+    FileChosser:
+        id: filechosser
+        name: 'filechosser'
+        manager: screen_manager
+
+<Downloader>:
+    name: 'downloader'
+    id: 'downloader'
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves just like the css BorderImage
+            border: 10, 10, 10, 10
+            source: 'img-26.jpg'
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        orientation: 'vertical'
+        padding: 20
+
+        TextInput:
+            id: link_input
+            text: ''
+            hint_text: 'Paste a YouTube link here'
+            font_size: 20
+            size_hint: .7, .07
+            pos_hint: {'x':.130, 'y':.6}
+
+
+        ProgressBar:
+            id: pb
+            value: 0
+            min: 0
+            max: 1
+            pos_hint: {'x':.2}
+            size_hint_x: .5
+
+        Button:
+            id: button
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'MP3'
+            on_press: root.mp3()
+            on_release: root.clicked()
+            size_hint: .15, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.3, 'y':.4}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+        Button:
+            id: button
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'MP4'
+            on_press: root.mp4()
+            on_release: root.clicked()
+            size_hint: .15, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.5, 'y':.4}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+        # Nav
+
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Guide'
+            on_press: root.manager.current = 'guide'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.1, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Downloader'
+            on_press: root.manager.current = 'downloader'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.3, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Downloads'
+            on_press: root.manager.current = 'gallery'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.5, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Files'
+            on_press: root.manager.current = 'filechosser'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.7, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+
+
+<Guide>:
+    name: 'guide'
+    id: guide
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves just like the css BorderImage
+            border: 10, 10, 10, 10
+            source: 'img-26.jpg'
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        orientation: 'vertical'
+        padding: 20
+        Label:
+            id: label1
+            font_name: 'Roboto'
+            font_size: 18
+            text: ' Step 1: Copy the wanted youtube link.  '
+            text_size: self.width-30, self.height-10
+            size_hint: .8, .5
+            pos_hint: {'x':.1, 'y':.8}
+        Label:
+            id: label2
+            font_name: 'Roboto'
+            font_size: 18
+            text: ' Step 2: Paste the link in the entry In the downloader page '
+            text_size: self.width-30, self.height-10
+            size_hint: .8, .5
+            pos_hint: {'x':.1, 'y':.6}
+        Label:
+            id: label3
+            font_name: 'Roboto'
+            font_size: 18
+            text: ' Step 3: Download the wanted version MP4 or MP3 by clicking on them'
+            text_size: self.width-30, self.height-10
+            size_hint: .8, .5
+            pos_hint: {'x':.1, 'y':.4}
+
+
+
+        # Nav
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Guide'
+            on_press: root.manager.current = 'guide'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.1, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Downloader'
+            on_press: root.manager.current = 'downloader'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.3, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Downloads'
+            on_press: root.manager.current = 'gallery'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.5, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+        Button:
+            font_name: 'Roboto'
+            font_size: 8
+            text: 'Files'
+            on_press: root.manager.current = 'filechosser'
+            size_hint: .2, .05
+            # x, y max 650, max 650
+            pos_hint: {'x':.7, 'y':.1}
+            background_color: (1.0, 0.0, 0.0, 1.0)
+            border: 10, 10, 10, 10
+
+
+
+
+<Gallery>:
+
+    name: 'gallery'
+    id: gallery
+    canvas.before:
+
+        BorderImage:
+        # BorderImage behaves just like the css BorderImage
+            border: 10, 10, 10, 10
+            source: 'img-26.jpg'
+            pos: self.pos
+            size: self.size
+
+            # Goal is a gallery image, leabel, play button with scroll view! that's it!
+    GridLayout:
+        cols: 1
+
+        ScrollView:
+            id: scroll_view
+            do_scroll_x: False
+            do_scroll_y: True
+
+
+        FloatLayout:
+
+            # Nav
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Guide'
+                on_press: root.manager.current = 'guide'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.1, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Downloader'
+                on_press: root.manager.current = 'downloader'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.3, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Downloads'
+                on_press: root.manager.current = 'gallery'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.5, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Files'
+                on_press: root.manager.current = 'filechosser'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.7, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+
+
+<FileChosser>:
+    GridLayout:
+        cols: 1
+        canvas.before:
+            BorderImage:
+                # BorderImage behaves just like the css BorderImage
+                border: 10, 10, 10, 10
+                source: 'img-26.jpg'
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            FileChooserListView:
+                path: root.get_current_path()
+                name: 'filechosser'
+                id: filechosser
+
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    BoxLayout:
+                        size_hint_y: None
+                        height: 30
+                        Button:
+                            background_color: (1.0, 0.0, 0.0, 1.0)
+                            text: 'Load'
+                            on_press: root.load(filechosser.path, filechosser.selection)
+
+        FloatLayout:
+            # Nav
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Guide'
+                on_press: root.manager.current = 'guide'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.1, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Downloader'
+                on_press: root.manager.current = 'downloader'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.3, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Downloads'
+                on_press: root.manager.current = 'gallery'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.5, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+            Button:
+                font_name: 'Roboto'
+                font_size: 8
+                text: 'Player'
+                on_press: root.manager.current = 'filechosser'
+                size_hint: .2, .05
+                # x, y max 650, max 650
+                pos_hint: {'x':.7, 'y':.1}
+                background_color: (1.0, 0.0, 0.0, 1.0)
+                border: 10, 10, 10, 10
+
+
+
+
+<MyVideoPlayer> :
+#
+#     name: 'myvideoplayer'
+#     id: 'myvideoplayer'
+#
+#     GridLayout:
+#         name: "ScreenGrid"
+#         pos_hint: {'top': 1}
+#         cols:1
+#         rows:2
+#         ActionBar:
+#             pos_hint: {'top': 1}
+#             height:'100sp'
+#             ActionView:
+#                 ActionPrevious:
+#                     with_previous: True
+#                     on_release: root.onBackBtn()
+#
+# <VideoPlayer>:
+#     options: {'eos': 'loop'}
+#     allow_stretch: False

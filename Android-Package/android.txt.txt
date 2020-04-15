@@ -1,0 +1,3 @@
+title=<YTDownloader>
+author=<Ahmed Rakan Aldhafeeri>
+orientation=<portrait|landscape>
