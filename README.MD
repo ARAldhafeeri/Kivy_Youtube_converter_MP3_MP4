@@ -1,8 +1,35 @@
-## THis is a youtube downloader:
-The user will insert a link in the entry. Then when the user push download button the app will download the video with the
-same title as the one on youtube and save it on the local machine. The app has multiple screens and navigation system.
-1-7-2020: The multiple screens and the navigation system are complete from this date I am working on simple video gallery and simple video player. The user can play the most recent downloads from within the app and gets directed to the device video player that has much better quality than the video player I built.
+## MP4 and MP3 Youtube converter 
+### About the app:
+The app will convert youtube link into mp3 or mp4 format as shown in the downloader page: 
+
+### Requirements:
+    pip install requirements.txt
+All downloads information are saved into local database called data.db. The user have two
+options in playing the selected downloaded videos. One through generated scroll view list
+with the picture of the video and the button to play:
 
 
-This app is created by Eng. Ahmed Aldhafeeri
-Email: AR.aldhafeeri11@gmail.com
+
+
+The other is file explorer style where the user can find the downloads in the two folders
+MP3_downloads 
+MP4_downloads
+
+
+
+The app also contain simple guide page. 
+
+The navigation system is in the button to switch pages.
+
+### Packages:
+1) Desktop package: is fully completed in the Desktop_Package folder
+2) Android package is under progress. Unfortunately I found that android development
+with kivy is a waste of time and effort as the framework is not complete. 
+But you can dig into it follow this link for more information.
+Note: I recommend buildozer as the kivy emulator on android store does not work. 
+  
+More information about packaging: 
+
+https://kivy.org/doc/stable/guide/packaging.html
+ 
+

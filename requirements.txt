@@ -1,0 +1,15 @@
+Kivy==1.11.1
+kivy-deps.angle==0.2.0
+kivy-deps.glew==0.2.0
+kivy-deps.gstreamer==0.2.0
+kivy-deps.sdl2==0.2.0
+Kivy-examples==1.11.1
+Kivy-Garden==0.1.4
+moviepy==1.0.2
+Pygments==2.5.2
+PyInstaller==4.0.dev0+f877f3eb8a
+pytube3==9.6.4
+pytz==2018.5
+pywin32==227
+pywin32-ctypes==0.2.0
+
