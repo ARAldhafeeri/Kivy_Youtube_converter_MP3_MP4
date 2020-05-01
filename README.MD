@@ -35,7 +35,7 @@ The navigation system is in the button to switch pages.
 2) Android package is under progress. Unfortunately I found that android development
 with kivy is a waste of time and effort as the framework is not complete. 
 But you can dig into it follow this link for more information.
-Note: I recommend buildozer as the kivy emulator on android store does not work. 
+Note: I DO NOT recommend buildozer as the kivy emulator on android store does not work. 
  
 ### Using the app:
 
